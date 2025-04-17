@@ -24,3 +24,7 @@ test("supports custom delimiters defined with //delimiter",()=>{
     expect(Add("//;\n1;2")).toBe(3)
     // expect(Add("//[\n1\n2")).toBe(3)
 })
+
+test("throws an exception when negative numbers are included",()=>{
+    expect(()=>Add("1,-2,3,4,-5")).toThrow("negative numbers are not allowed")
+})
