@@ -33,3 +33,8 @@ test("ignores number greater than 1000",()=>{
     expect(Add("2,1001")).toBe(2)
     expect(Add("1000,1")).toBe(1001)
 })
+
+
+test("supports delimiters of any length using //[***]\\n syntax",()=>{
+    expect(Add("//[***]\n1***2***3")).toBe(6)
+})

@@ -6,7 +6,13 @@ function Add(numbers){
     if(numbers.startsWith("//")){
         //extract custom delimiter
         const delimiterLineEnd=numbers.indexOf("\n")
-         delimiter=numbers.slice(2,delimiterLineEnd)
+         const delimiterPart=numbers.slice(2,delimiterLineEnd)
+         if(delimiterPart.startsWith("[")&& delimiterPart.endsWith("]")){
+            const customDelimiter=delimiterPart.slice(1,-1);
+            delimiter=new RegExp(customDelimiter.replace(/[-/\\^$*+?.()|[\]{}]/g,'\\$&'))
+         }else{
+            delimiter=delimiterPart
+         }
 
         numbers=numbers.slice(delimiterLineEnd+1)
         //remove cutsom delimiter line
