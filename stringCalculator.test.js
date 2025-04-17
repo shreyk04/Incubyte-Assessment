@@ -14,3 +14,8 @@ test("returns sum of multiple comma separted numbers",()=>{
     expect(Add("2,3,5")).toBe(10)
     expect(Add("1,2,3,4,5")).toBe(15)
 })
+
+
+test("supports new lines as delimiters along with commas",()=>{
+    expect(Add("1\n2,3")).toBe(6)
+})
