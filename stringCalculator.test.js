@@ -28,7 +28,6 @@ test("supports new lines as delimiters along with commas",()=>{
 
 test("supports custom delimiters defined with //delimiter",()=>{
     expect(calculator.Add("//;\n1;2")).toBe(3)
-    // expect(Calculator.Add("//[\n1\n2")).toBe(3)
 })
 
 test("throws an exception when negative numbers are included",()=>{
