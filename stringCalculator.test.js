@@ -19,3 +19,8 @@ test("returns sum of multiple comma separted numbers",()=>{
 test("supports new lines as delimiters along with commas",()=>{
     expect(Add("1\n2,3")).toBe(6)
 })
+
+test("supports custom delimiters defined with //delimiter",()=>{
+    expect(Add("//;\n1;2")).toBe(3)
+    // expect(Add("//[\n1\n2")).toBe(3)
+})
