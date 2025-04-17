@@ -20,7 +20,7 @@ function Add(numbers){
     if(negatives.length>0){
         throw new Error("negative numbers are not allowed")
     }
-    return parts.reduce((sum,num)=>sum+num,0)
+    return parts.filter((num)=>num<=1000).reduce((sum,num)=>sum+num,0)
 
     // const parts=numbers.split(/,|\n/).map(Number);
     // return parts.reduce((sum,num)=>sum+num,0)
